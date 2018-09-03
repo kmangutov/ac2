@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Armada</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/dashfront.css">
+    <style>
+        body { margin:0; padding:0; background-color: #f7f8f9 !important; }
+        #map { height:500px;}
+        .card {
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+            border-radius: 12px !important;
+            overflow: hidden;
+        }
+    </style>
+    <script src="js/modernizr.custom.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<nav class="navbar navbar-icon-top navbar-expand-lg" style="background-color: #f7f8f9;">
+  <div class="text-left">
+              <a href="#"><img style = "max-width: 200px" src="../img/logoTop.png" alt="Armada Logo"></a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline" style="width: 100%; margin-left: 25px;">
+    <div class="input-group" style="width: 100%;">
+        <div class="input-group-prepend">
+    <span class="input-group-text" style="background-color: white; border-right: 0px;"><i class="fa fa-search"></i></span>
+  </div>
+      <input class="form-control mr-sm-2" type="text" placeholder="Search supply chain..." aria-label="Search" style="border-left: 0px;">
+      </div>
+    </form>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <br/>
+  <div class="row">
+    <div class="col-lg-2" style="max-width: 12%;">
+      <ul style="list-style-type:none">
+        <li><a href="https://google.com"><i class="fa fa-ship text-muted fa-2x" style="font-size: 1.1em; width: 32px;"></i></a>Dashboard
+        </li>
+        <li><a href="https://google.com"><i class="fa fa-cubes text-muted fa-2x" style="font-size: 1.1em; width: 32px;"></i></a> Analytics
+        </li>
+        <li><a href="https://google.com"><i class="fa fa-envelope text-muted fa-2x" style="font-size: 1.1em; width: 32px;"></i></a>  Orders
+        </li>
+        <li><a href="https://google.com"><i class="fa fa-truck text-muted fa-2x" style="font-size: 1.1em; width: 32px;"></i></a> Routes
+        </li>
+        <li><a href="https://google.com"><i class="fa fa-btc text-muted fa-2x" style="font-size: 1.1em; width: 32px;"></i></a>  Tokens
+        </li>
+        <li><a href="https://google.com"><i class="fa fa-building text-muted fa-2x" style="font-size: 1.1em; width: 32px;"></i></a> Warehouses
+        </li>
+        <li><a href="https://google.com"><i class="fa fa-ship text-muted fa-2x" style="font-size: 1.1em; width: 32px;"></i></a> Sea
+        </li>
+        <li><a href="https://google.com"><i class="fa fa-truck text-muted fa-2x" style="font-size: 1.1em; width: 32px;"></i></a> Freight
+        </li>
+        <li><a href="https://google.com"><i class="fa fa-train text-muted fa-2x" style="font-size: 1.1em; width: 32px;"></i></a> Rail
+        </li>
+        <li><a href="https://google.com"><i class="fa fa-car text-muted fa-2x" style="font-size: 1.1em; width: 32px;"></i></a> Couriers
+        </li>
+        <li><a href="https://google.com"><i class="fa fa-plane text-muted fa-2x" style="font-size: 1.1em; width: 32px;"></i></a> Air
+        </li>
+      </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="col-lg-10">
+      <div class="card">
+        <div id='map'></div>
+        <div class="card-body">
+          <div class="row">
+              <div class="col-md-5" style="border-right: 1px solid #eee;">
+                <h5 style="color: #00c1db; margin-bottom: 15px;">Active Shipments</h5>
+                <div>
+                  <p style="margin-bottom: 2px;">
+                    <b>HGK ⟷ Beijing <i class="fa fa-ship text-muted" style="float: right;"></i></b><br/>
+                    <small>Solar Panels · <a href="https://etherscan.io/address/0x49E033122C8300a6d5091ACf667494466eE4a9D2">0x49E033122C8300a6d5091ACf667494466eE4a9D2</a></small>
+                  </p>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-success-striped" style="width: 40%; background-color: #7ad6ff">
+                      <span class="sr-only">40% Complete (success)</span>
+                    </div>
+                  </div>
+                  <hr/>
+                </div>
+                <div>
+                  <p style="margin-bottom: 2px;">
+                    <b>HGK ⟷ Shanghai <i class="fa fa-ship text-muted" style="float: right;"></i></b><br/>
+                    <small>Food Merch · <a href="https://etherscan.io/address/0x49E033122C8300a6d5091ACf667494466eE4a9D2">0x49E033122C8300a6d5091ACf667494466eE4a9D2</a></small>
+                  </p>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-success-striped" style="width: 40%; background-color: #7ad6ff">
+                      <span class="sr-only">40% Complete (success)</span>
+                    </div>
+                  </div>
+                  <hr/>
+                </div>
+                <div>
+                  <p style="margin-bottom: 2px;">
+                    <b>NYC ⟷ Dallas <i class="fa fa-ship text-muted" style="float: right;"></i></b><br/>
+                    <small>Oil · <a href="https://etherscan.io/address/0x49E033122C8300a6d5091ACf667494466eE4a9D2">0x49E033122C8300a6d5091ACf667494466eE4a9D2</a></small>
+                  </p>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-success-striped" style="width: 40%; background-color: #7ad6ff">
+                      <span class="sr-only">40% Complete (success)</span>
+                    </div>
+                  </div>
+                  <hr/>
+                </div>
+                <div>
+                  <p style="margin-bottom: 2px;">
+                    <b>NYC ⟷ LA  <i class="fa fa-ship text-muted" style="float: right;"></i></b><br/>
+                    <small>Street Wear · <a href="https://etherscan.io/address/0x49E033122C8300a6d5091ACf667494466eE4a9D2">0x49E033122C8300a6d5091ACf667494466eE4a9D2</a></small>
+                  </p>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-success-striped" style="width: 40%; background-color: #7ad6ff">
+                      <span class="sr-only">40% Complete (success)</span>
+                    </div>
+                  </div>
+                  <hr/>
+                </div>
+              </div>
+              <div class="col-md-4" style="border-right: 1px solid #eee;">
+                <h5 style="color: #00c1db; margin-bottom: 15px;">Active Bookings</h5>
+                <div>
+                  <p style="margin-bottom: 2px;"><small>
+                    <b>HGK ⟷ Shanghai · </b><span style="text-overflow: ellipsis;"><a href="https://etherscan.io/address/0x49E033122C8300a6d5091ACf667494466eE4a9D2">0x41273122C8300a6d5091ACf667494466eE4a9D2</a></span></small><br/>
+                  </p>
+                  <hr/>
+                </div>
+                <div>
+                  <p style="margin-bottom: 2px;"><small>
+                    <b>HGK ⟷ Taiwan · </b><span style="text-overflow: ellipsis;"><a href="https://etherscan.io/address/0x49E033122C8300a6d5091ACf667494466eE4a9D2">0x912333122C8300a6d5012ACf667494466eE4a9D2</a></span></small><br/>
+                  </p>
+                  <hr/>
+                </div>
+                <div>
+                  <p style="margin-bottom: 2px;"><small>
+                    <b>HGK ⟷ Beijing · </b><span style="text-overflow: ellipsis;"><a href="https://etherscan.io/address/0x49E033122C8300a6d5091ACf667494466eE4a9D2">0x49E033122C8ad0a6d5091ACf667494466eE4a9D2</a></span></small><br/>
+                  </p>
+                  <hr/>
+                </div>
+                <div>
+                  <p style="margin-bottom: 2px;"><small>
+                    <b>AUS ⟷ UK · </b><span style="text-overflow: ellipsis;"><a href="https://etherscan.io/address/0x49E033122C8300a6d5091ACf667494466eE4a9D2">0x56E033143C8300a6d5091ACf667494466eE4a9D2</a></span></small><br/>
+                  </p>
+                  <hr/>
+                </div>
+                <button class="btn btn-sm btn-light" style="border: 1px solid #e0e0e0;">View all bookings</button>
+                <br/>
+                <br/>
+                <br/>
+                <h5 style="color: #00c1db; margin-bottom: 15px;">Active Contracts</h5>
+                <div>
+                  <p style="margin-bottom: 2px;"><small>
+                    <b>Austin ⟷ Shanghai · </b><span style="text-overflow: ellipsis;"><a href="https://etherscan.io/address/0x49E033122C8300a6d5091ACf667494466eE4a9D2">0x981E033122C8300a6d5091ACf667494466eE4a9D2</a></span></small><br/>
+                  </p>
+                  <hr/>
+                </div>
+              </div>
+              <div class="col-md-3">
+                  <img src="./images/front2.png" style="width: 100%;">
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+    mapboxgl.accessToken = 'pk.eyJ1IjoiamFja2llejM4OTUiLCJhIjoiY2lsZnppc2R2MjN4NXZubWNta2k4d2d0OSJ9.Rno_SSBkcFDlq4rCoLHnQg';
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [118.654001, 26.936789],
+        zoom: 4
+    });
+
+    map.on('load', function () {
+
+        map.addLayer({
+            "id": "route",
+            "type": "line",
+            "source": {
+                "type": "geojson",
+                "data": {
+                    "type": "Feature",
+                    "properties": {},
+                    "geometry": {
+                        "type": "LineString",
+                        "coordinates": [[121.4737,31.2304],
+                        [121.5654,25.0330],
+                        [139.6917,35.6895],
+                        [259.7430608,30.267153]
+                        ]
+                    }
+                }
+            },
+            "layout": {
+                "line-join": "round",
+                "line-cap": "round"
+            },
+            "paint": {
+                "line-color": "#888888",
+                "line-width": 3
+            }
+        });
+
+    });
+</script>
+<script src="js/cbpTooltipMenu.min.js"></script>
+<script>
+    var menu = new cbpTooltipMenu( document.getElementById( 'cbp-tm-menu' ) );
+</script>
+
+</body>
+</html>
