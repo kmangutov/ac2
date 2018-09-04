@@ -1,0 +1,142 @@
+body {
+    background-color: white;
+}
+
+/* Colors */
+/* Stepper Styling */
+.stepper-container {
+  background-color: rgba(255, 255, 255, 0.25);
+  margin-bottom: 2em;
+  border-radius: 5em;
+}
+
+.stepper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.step {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  width: 100%;
+}
+.step:after {
+  content: '';
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 3px;
+  top: -5px;
+  background-color: rgb(150,150,154);
+}
+.step:before {
+  content: '';
+  display: block;
+  width: 100%;
+  position: relative;
+  height: 3px;
+  top: -5px;
+  background-color: rgb(150,150,154);
+}
+.step:last-child {
+  flex-basis: 70%;
+}
+.step:last-child:after {
+  display: none;
+}
+.step:first-child {
+  flex-basis: 70%;
+}
+.step:first-child:before {
+  display: none;
+}
+
+.step.active {
+  color: white;
+}
+.step.active:before, .step.active:after {
+  background-color: rgb(150,150,154);
+}
+.step.active + .step:not(.active):before {
+  background-color: rgb(150,150,154);
+}
+
+.step-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.active .step-rounded {
+  background-color: rgb(150,150,154);
+}
+
+.step-rounded {
+  height: 30px;
+  width: 30px;
+  border-radius: 6px;
+  background-color: rgb(150,150,154);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vertical .stepper {
+  flex-direction: column;
+}
+.vertical .step {
+  position: relative;
+  flex-direction: row;
+  align-items: flex-start;
+  width: 100%;
+  min-height: 3em;
+}
+.vertical .step:after {
+  display: inline;
+  width: 2px;
+  position: absolute;
+  height: 100%;
+  left: .85em;
+  top: .5em;
+  z-index: -1;
+}
+.vertical .step:before {
+  display: none;
+}
+.vertical .step:last-child:after {
+  display: none;
+}
+.vertical .step-content {
+  margin-left: 1em;
+  color: #3C4859;
+}
+
+.card {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+    border-radius: 12px;
+}
+
+.step.active .step-content>.card {
+  border: 2px solid #00C1DB;
+}
+
+.step.active:after {
+  background-color: #00C1DB;
+}
+
+.step.active .step-rounded {
+  background-color: #00C1DB;
+}
+
+.step-rounded i.fa-check {
+  color: white !important;
+}
+
+button.btn-primary {
+  background-color: #00C1DB !important;
+  border-color: #00a8bf;
+}
