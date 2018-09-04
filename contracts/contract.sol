@@ -42,7 +42,22 @@ contract insurance {
   	payable
   	{
   		emit TransactionStarted();
-  		shippee
+  		shippee = msg.sender;
+  		state = State.Locked; //Why fix here
+
+  	}
+
+  function confirmReceived()
+  	onlyShipper //Confirm item etc, 
+  	inState(State.Locked)
+  	{
+  		emit ItemReceived();
+  		//NOTES:
+  		//Need to add Oracle that updates this
+  		state = State.Inactive;
+
+  		shipper_address.transfer(address(this).balance);
+  		
   	}
   function shipping_current() constant public returns (uint) {return shipping_cost; }
 
