@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Armada</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
+    <link rel="stylesheet" href="css/dashfront.css">
+    <style>
+        body { margin:0; padding:0; background-color: #f7f8f9 !important; }
+        #map { height:500px;}
+        .card {
+            box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
+            border-radius: 12px !important;
+            overflow: hidden;
+        }
+    </style>
+    <script src="js/modernizr.custom.js"></script>
+    <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-grid.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-reboot.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="css/create_contract.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<nav class="navbar navbar-icon-top navbar-expand-lg" style="background-color: #f7f8f9;">
+  <div class="text-left">
+              <a href="./dashfront.html"><img style = "max-width: 200px" src="../img/logoTop.png" alt="Armada Logo"></a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <form class="form-inline" style="width: 100%; margin-left: 25px;">
+    <div class="input-group" style="width: 100%;">
+        <div class="input-group-prepend">
+    <span class="input-group-text" style="background-color: white; border-right: 0px;"><i class="fa fa-search"></i></span>
+  </div>
+      <input class="form-control mr-sm-2" type="text" placeholder="Search supply chain..." aria-label="Search" style="border-left: 0px;">
+      </div>
+    </form>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <br/>
+  
+<center>
+ <div class="col-lg-8">
+  <div class="card">
+    <div class="card-body">
+      <div class="row">
+        <div class="col-md-12">
+
+          <form>
+            <div class="form-group">
+              <label for="transportType" class="left">Transport Type</label>
+              <select id="transportType" class="form-control">
+                <option>Shipment</option>
+                <option>Storage</option>
+                <option>Freight</option>
+                <option>Last Mile</option>
+              </select>
+            </div>
+
+
+            <div class="form-group">
+              <label for="weight" class="left">Net Weight</label>
+              <input type="text" class="form-control" id="weight" placeholder="123 lb">
+            </div>
+
+
+            <div class="form-group">
+
+              <label for="exampleInputEmail1" class="left">Origin</label>
+              <select class="form-control">
+                <option>HGK</option>
+                <option>NYC</option>
+                <option>ORD</option>
+                <option>SFO</option>
+              </select>
+
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1" class="left">Destination</label>
+              <select class="form-control">
+                <option>HGK</option>
+                <option>NYC</option>
+                <option>ORD</option>
+                <option>SFO</option>
+              </select>
+            </div>
+            <br>
+
+            <a href="./create_contract_insurance_a.html"><button class="btn btn-lg btn-primary" style="float: right; width: 100%; background-color: #00c1db; border: none; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1)">Choose your insurance</button></a>
+          </form>
+          <br/>
+          <br/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</center>
+
+</div>
+</body>
+</html>
