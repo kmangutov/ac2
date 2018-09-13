@@ -4,12 +4,15 @@
     <meta charset='utf-8' />
     <title>Armada</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.47.0/mapbox-gl.css' rel='stylesheet' />
     <link rel="stylesheet" href="css/dashfront.css">
     <style>
         body { margin:0; padding:0; background-color: #f7f8f9 !important; }
-        #map { height:500px;}
+        
+        #map1 {text-align: justify; height:326.25px;}
+        #map2 {text-align: justify; height:326.25px;}
         .card {
             box-shadow: 0 1px 3px 0 rgba(0,0,0,0.15);
             border-radius: 12px !important;
@@ -48,7 +51,8 @@
   <br/>
   
 <center>
- <div class="col-lg-8">
+            <form>
+ <div class="col-lg-6">
   <div class="card">
     <div class="card-body">
       <div class="row">
@@ -57,7 +61,7 @@
           <h3>Generate supply chain partnership</h3>
           <br>
 
-          <form>
+
             <div class="form-group">
               <label for="transportType" class="left">Transport Type</label>
               <select id="transportType" class="form-control">
@@ -74,27 +78,40 @@
               <input type="text" class="form-control" id="weight" placeholder="123 lb">
             </div>
 
+         </div>
+         <div class="col-md-6 col-sm-12">
 
-            <div class="form-group">
+          <div class="form-group">
 
-              <label for="exampleInputEmail1" class="left">Origin</label>
-              <select class="form-control">
-                <option>HGK</option>
-                <option>NYC</option>
-                <option>ORD</option>
-                <option>SFO</option>
-              </select>
+            <label for="exampleInputEmail1" class="left">Origin</label>
+            <select class="form-control" id="origin">
+              <option>HKG</option>
+              <option>NYC</option>
+              <option>LAX</option>
+            </select>
+            <br>
+            <div id='map1'></div>
 
-            </div>
+          </div>
+         </div>
+         <div class="col-md-6 col-sm-12">
+
             <div class="form-group">
               <label for="exampleInputPassword1" class="left">Destination</label>
-              <select class="form-control">
-                <option>HGK</option>
+              <select class="form-control" id="destination">
+                <option>HKG</option>
                 <option>NYC</option>
-                <option>ORD</option>
-                <option>SFO</option>
+                <option>LAX</option>
               </select>
+              <br>
+              <div id='map2'></div>
+
             </div>
+
+         </div>
+         <br>
+
+
             <br>
 
             <a href="create_contract_insurance_a.html"  class="btn btn-lg btn-primary" style="float: right; width: 100%; background-color: #00c1db; border: none; box-shadow: 0 1px 2px 0 rgba(0,0,0,0.1)">Choose your insurance</a>
@@ -111,3 +128,8 @@
 </div>
 </body>
 </html>
+        <script
+  src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
+  crossorigin="anonymous"></script>
+        <script src='js/create_contract.js'></script>
