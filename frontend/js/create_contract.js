@@ -22,8 +22,14 @@ var map2 = new mapboxgl.Map({
 
 $('#origin').on('change', function() {
   map1.flyTo({center: coordMap[this.value]})
+  Lockr.set('origin', this.value)
 });
 
 $('#destination').on('change', function() {
   map2.flyTo({center: coordMap[this.value]})
+  Lockr.set('destination', this.value)
 });
+
+Lockr.set('origin', 'HKG')
+Lockr.set('destination', 'HKG')
+Lockr.set('updated', 'true')
