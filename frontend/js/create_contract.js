@@ -2,7 +2,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoiamFja2llejM4OTUiLCJhIjoiY2lsZnppc2R2MjN4NXZub
 var map1 = new mapboxgl.Map({
     container: 'map1',
     style: 'mapbox://styles/mapbox/streets-v9',
-    center: [118.654001, 26.936789],
+    center: [-100.34033203125,32.01647949196029245],
     zoom: 1
 });
 
@@ -12,6 +12,7 @@ var map1 = new mapboxgl.Map({
   'LAX': [-118.34033203125,26.01647949196029245]
 }*/
 var coordMap = {
+  "Austin": [-100.34033203125,32.01647949196029245],
   "Beijing": [118.654001, 26.936789],
   "Hong Kong": [118.654001, 0.936789],
   "London": [-10.32, 60],
@@ -40,6 +41,6 @@ $('#destination').on('change', function() {
   Lockr.set('destination', this.value)
 });
 
-Lockr.set('origin', 'HKG')
-Lockr.set('destination', 'HKG')
+Lockr.set('origin', 'Austin')
+Lockr.set('destination', 'Beijing')
 Lockr.set('updated', 'true')
