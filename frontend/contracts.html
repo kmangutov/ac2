@@ -76,7 +76,7 @@
                     <br/>
                     <div class="card">
                         <div class="card-body">
-                            <h4 class="card-title" style="float: left; margin-bottom: 0px;">Austin, USA ⟶ Shanghai, China<br/><small class="text-muted" style="font-size: 14px;"><i class="fa fa-users"></i> 4 | <i class="fa fa-clock-o"></i> Delivery - 9 days | <i class="fa fa-leaf"></i> Carbon Footprint Saved - 8%</small></h4>
+                            <h4 class="card-title" style="float: left; margin-bottom: 0px;"><span class="origin"></span> ⟶ <span class="destination"></span><br/><small class="text-muted" style="font-size: 14px;"><i class="fa fa-users"></i> 4 | <i class="fa fa-clock-o"></i> Delivery - 9 days | <i class="fa fa-leaf"></i> Carbon Footprint Saved - 8%</small></h4>
 <!--                             <a href="./dashfront.html"><button class="btn btn-lg btn-primary" style="float: right;">Sign All Contracts</button></a>
  -->                        <button id="contract" class="btn btn-lg btn-primary" style="float: right;">Sign All Contracts</button>
                             <div style="float:right; padding-right:5px;"id="fold"> <p id="fold_p">Cost: 14320 ARMD</p></div>
@@ -99,7 +99,7 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <h5 class="card-title">Austin, USA ⟶ Tokyo, Japan</h5>
+                                                    <h5 class="card-title"><span class="origin"></span> ⟶ Tokyo, Japan</h5>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -173,7 +173,7 @@
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <h5 class="card-title">Taipei, Taiwan ⟶ Shanghai, China</h5>
+                                                    <h5 class="card-title">Taipei, Taiwan ⟶ <span class="destination"></h5>
                                                 </div>
                                             </div>
                                             <div class="row">
@@ -209,7 +209,7 @@
                         <div class="card-body" style="min-height: 800px;">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1 class="card-title">Austin, USA ⟶ Tokyo, Japan</h1>
+                                    <h1 class="card-title"><span class="origin"></span> ⟶ Tokyo, Japan</h1>
                                     <br/>
                                     <h6>People sharing this chain:</h6>
                                     <div class="row">
@@ -398,7 +398,7 @@
                         <div class="card-body" style="min-height: 800px;">
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h1 class="card-title">Taipei, Taiwan ⟶ Shanghai, China</h1>
+                                    <h1 class="card-title">Taipei, Taiwan ⟶ <span class="destination"></h1>
                                     <br/>
                                     <h6>People sharing this chain:</h6>
                                     <div class="row">
@@ -530,6 +530,8 @@
           let toClient = nkn();
           toClient.on('connect', () => {
             try {
+
+                // TODO(kmangutov/bwonymph): origin and destination need to be loaded dynamically. contracts.js has example to access
               fromClient.send(
                 toClient.addr,
                 'Your contract was accepted, for the Austin <> Shanghai Route',
@@ -611,6 +613,9 @@ $.ajax({
       dataType: "json"
     });
 </script>
+<!-- Load selected origin/destination -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lockr/0.8.4/lockr.min.js"></script>
+<script src="js/contracts.js"></script>
 </body>
 
 </html>
